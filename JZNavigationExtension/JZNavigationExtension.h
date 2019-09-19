@@ -22,3 +22,4 @@
 
 #import "UINavigationController+JZExtension.h"
 #import "UIViewController+JZExtension.h"
+#import "JZNavigationViewController.h"
