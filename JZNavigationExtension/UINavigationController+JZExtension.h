@@ -21,6 +21,7 @@
 // SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "JZNavigationViewController.h"
 
 /**
  *  The "UINavigationController+JZExtension" category integrates some convenient functions, such as gives your UINavigationController a fullscreen interactivePopGestureRecognizer, different navigation bar transition style, and so on.
@@ -32,7 +33,7 @@ typedef enum : NSInteger {
     JZNavigationBarTransitionStyleDoppelganger
 } JZNavigationBarTransitionStyle;
 
-@interface UINavigationController (JZExtension)
+@interface JZNavigationViewController (JZExtension)
 
 /**
  *  Expand two different navigation bar transition style, setting this property for the global navigation transition. It is worth noting that custom navigation transitions or disable navigation bar translucent will crossfade the navigation bar forcibly.

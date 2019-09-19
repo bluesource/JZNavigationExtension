@@ -25,7 +25,7 @@
 #import "_JZNavigationDelegating.h"
 #import "UIViewController+JZExtension.h"
 
-@implementation UINavigationController (JZExtension)
+@implementation JZNavigationViewController (JZExtension)
 
 __attribute__((constructor)) static void JZ_Inject(void) {
     static dispatch_once_t onceToken;
@@ -44,8 +44,8 @@ __attribute__((constructor)) static void JZ_Inject(void) {
             
         };
         
-        jz_method_swizzling([UINavigationController class], @selector(setDelegate:), @selector(jz_setDelegate:));
-        jz_method_swizzling([UINavigationController class], @selector(viewDidLoad), @selector(jz_viewDidLoad));
+        jz_method_swizzling([JZNavigationViewController class], @selector(setDelegate:), @selector(jz_setDelegate:));
+        jz_method_swizzling([JZNavigationViewController class], @selector(viewDidLoad), @selector(jz_viewDidLoad));
         if (@available(iOS 11, *)) {
         } else { //Change navigation bar size feature not support iOS11 by now.
             jz_method_swizzling([UINavigationBar class], @selector(sizeThatFits:), @selector(jz_sizeThatFits:));
@@ -163,7 +163,7 @@ __attribute__((constructor)) static void JZ_Inject(void) {
 - (void)setJz_navigationBarBackgroundAlphaReal:(CGFloat)jz_navigationBarBackgroundAlpha {
     [[self.navigationBar jz_backgroundView] setAlpha:jz_navigationBarBackgroundAlpha];
     if (fabs(jz_navigationBarBackgroundAlpha - 0) <= 0.001) {
-        [self.navigationBar setShadowImage:[UIImage new]];
+     //   [self.navigationBar setShadowImage:[UIImage new]];
     }
 }
 

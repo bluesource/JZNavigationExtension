@@ -160,7 +160,12 @@
 }
 
 - (UIViewController *)jz_previousViewController {
-    return self.navigationController ? [self.navigationController jz_previousViewControllerForViewController:self] : nil;
+    if ([self.navigationController isKindOfClass:JZNavigationViewController.class]) {
+        JZNavigationViewController* navigationController = (JZNavigationViewController*) self.navigationController;
+        return navigationController ? [navigationController jz_previousViewControllerForViewController:self] : nil;
+    } else {
+        return nil;
+    }
 }
 
 @end

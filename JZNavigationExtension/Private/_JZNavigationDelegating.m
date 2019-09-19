@@ -12,7 +12,7 @@
 #import "UINavigationController+JZExtension.h"
 
 @interface _JZNavigationDelegating()
-@property (nonatomic, weak) UINavigationController *navigationController;
+@property (nonatomic, weak) JZNavigationViewController *navigationController;
 @property (nonatomic, copy) dispatch_block_t actionsPerformInDealloc;
 @end
 
@@ -30,7 +30,7 @@
     return self;
 }
 
-- (instancetype)initWithNavigationController:(UINavigationController *)navigationController {
+- (instancetype)initWithNavigationController:(JZNavigationViewController *)navigationController {
     self = [super init];
     if (self) {
         self.navigationController = navigationController;
@@ -38,8 +38,8 @@
     return self;
 }
 
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    
+- (void)navigationController:(UINavigationController *) _navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    JZNavigationViewController* navigationController = (JZNavigationViewController*) _navigationController;
     id<UIViewControllerTransitionCoordinator> transitionCoordinator = navigationController.topViewController.transitionCoordinator;
     
     void (^animateAlongsideTransition)(id <UIViewControllerTransitionCoordinatorContext>) = NULL;
