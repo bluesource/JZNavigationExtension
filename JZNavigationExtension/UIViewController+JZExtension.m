@@ -68,21 +68,6 @@
     return [objc_getAssociatedObject(self, _cmd) jz_CGFloatValue];
 }
 
-- (CGFloat)jz_navigationBarBackgroundAlphaWithNavigationController:(UINavigationController *)navigationController {
-    
-    id jz_navigationBarBackgroundAlpha = objc_getAssociatedObject(self, @selector(jz_navigationBarBackgroundAlpha));
-    if (jz_navigationBarBackgroundAlpha) {
-        return [jz_navigationBarBackgroundAlpha jz_CGFloatValue];
-    }
-    
-    jz_navigationBarBackgroundAlpha = objc_getAssociatedObject(navigationController, @selector(jz_navigationBarBackgroundAlpha));
-    if (jz_navigationBarBackgroundAlpha) {
-        return [jz_navigationBarBackgroundAlpha jz_CGFloatValue];
-    }
-
-    return navigationController.navigationBar.jz_backgroundView.alpha;
-    
-}
 
 - (void)setJz_navigationBarTintColor:(UIColor *)jz_navigationBarTintColor {
     self.jz_navigationBarTintColorSetterBeenCalled = true;

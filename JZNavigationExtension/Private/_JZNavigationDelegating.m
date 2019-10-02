@@ -50,7 +50,6 @@
         [navigationController setNavigationBarHidden:[viewController jz_navigationBarHiddenWithNavigationController:navigationController] animated:animated];
         animateAlongsideTransition = ^(id<UIViewControllerTransitionCoordinatorContext> context) {
             navigationController.navigationBar.barTintColor = [viewController jz_navigationBarTintColorWithNavigationController:navigationController];
-            navigationController.jz_navigationBarBackgroundAlphaReal = [viewController jz_navigationBarBackgroundAlphaWithNavigationController:navigationController];
         };
 
     } else if (navigationController.jz_navigationBarTransitionStyle == JZNavigationBarTransitionStyleDoppelganger) {
@@ -79,7 +78,6 @@
         
         navigationController.navigationBarHidden = [viewController jz_navigationBarHiddenWithNavigationController:navigationController];
         navigationController.navigationBar.barTintColor = [viewController jz_navigationBarTintColorWithNavigationController:navigationController];
-        navigationController.jz_navigationBarBackgroundAlphaReal = [viewController jz_navigationBarBackgroundAlphaWithNavigationController:navigationController];
         
         CGFloat navigationBarAlpha = navigationController.navigationBar.alpha;
         
@@ -146,7 +144,6 @@
             
             if (context.isCancelled) {
                 navigationController.navigationBar.barTintColor = [adjustViewController jz_navigationBarTintColorWithNavigationController:navigationController];
-                navigationController.jz_navigationBarBackgroundAlphaReal = [adjustViewController jz_navigationBarBackgroundAlphaWithNavigationController:navigationController];
             } else {
                 [navigationController setNavigationBarHidden:[adjustViewController jz_navigationBarHiddenWithNavigationController:navigationController] animated:animated];
             }

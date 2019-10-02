@@ -25,7 +25,6 @@ typedef void(^_jz_navigation_block_t)(UINavigationController *navigationControll
 @interface UIViewController (_JZExtension)
 @property (nonatomic, assign, getter=jz_hasNavigationBarTintColorSetterBeenCalled) BOOL jz_navigationBarTintColorSetterBeenCalled;
 - (BOOL)jz_navigationInteractivePopGestureEnabledWithNavigationController:(UINavigationController *)navigationController;
-- (CGFloat)jz_navigationBarBackgroundAlphaWithNavigationController:(UINavigationController *)navigationController;
 - (UIColor *)jz_navigationBarTintColorWithNavigationController:(UINavigationController *)navigationController;
 - (BOOL)jz_navigationBarHiddenWithNavigationController:(UINavigationController *)navigationController;
 @end
@@ -41,7 +40,6 @@ typedef void(^_jz_navigation_block_t)(UINavigationController *navigationControll
 
 @protocol JZExtensionBarProtocol <NSObject>
 @property (nonatomic, assign) CGSize jz_size;
-- (UIView * _Nullable)jz_backgroundView;
 - (CGSize)jz_sizeThatFits:(CGSize)size;
 @end
 

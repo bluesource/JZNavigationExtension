@@ -46,11 +46,6 @@ typedef enum : NSInteger {
 @property (nonatomic, assign) BOOL jz_fullScreenInteractivePopGestureEnabled;
 
 /**
- *  The toolBar backgroundView's alpha value, default is 1. Animatable
- */
-@property (nonatomic, assign) CGFloat jz_toolbarBackgroundAlpha;
-
-/**
  *  The type of transition operation that is occurring. For a list of possible values, see the UINavigationControllerOperation constants.
  */
 @property (nonatomic, assign, readonly) UINavigationControllerOperation jz_operation;

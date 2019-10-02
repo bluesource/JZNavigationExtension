@@ -160,12 +160,6 @@ __attribute__((constructor)) static void JZ_Inject(void) {
 
 #pragma mark - properties
 
-- (void)setJz_navigationBarBackgroundAlphaReal:(CGFloat)jz_navigationBarBackgroundAlpha {
-    [[self.navigationBar jz_backgroundView] setAlpha:jz_navigationBarBackgroundAlpha];
-    if (fabs(jz_navigationBarBackgroundAlpha - 0) <= 0.001) {
-     //   [self.navigationBar setShadowImage:[UIImage new]];
-    }
-}
 
 - (void)setJz_navigationBarTransitionStyle:(JZNavigationBarTransitionStyle)jz_navigationBarTransitionStyle {
     objc_setAssociatedObject(self, @selector(jz_navigationBarTransitionStyle), @(jz_navigationBarTransitionStyle), OBJC_ASSOCIATION_ASSIGN);
@@ -252,17 +246,6 @@ __attribute__((constructor)) static void JZ_Inject(void) {
 
 - (CGSize)jz_navigationBarSize {
     return [self.navigationBar jz_size];
-}
-
-- (void)setJz_toolbarBackgroundAlpha:(CGFloat)jz_toolbarBackgroundAlpha {
-    [[self.toolbar jz_backgroundView] setAlpha:jz_toolbarBackgroundAlpha];
-    if (fabs(jz_toolbarBackgroundAlpha - 0) <= 0.001) {
-        [self.toolbar setShadowImage:[UIImage new] forToolbarPosition:UIBarPositionAny];
-    }
-}
-
-- (CGFloat)jz_toolbarBackgroundAlpha {
-    return [[self.toolbar jz_backgroundView] alpha];
 }
 
 - (void)setJz_toolbarSize:(CGSize)jz_toolbarSize {

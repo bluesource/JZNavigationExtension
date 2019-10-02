@@ -35,21 +35,6 @@
 
 JZExtensionBarImplementation
 
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    if ([[self jz_backgroundView] alpha] < 1.0f) {
-        return CGRectContainsPoint(CGRectMake(0, self.bounds.size.height - 44.f, self.bounds.size.width, 44.f), point);
-    } else {
-        return [super pointInside:point withEvent:event];
-    }
-}
-
-- (UIView *)jz_backgroundView {
-    if (@available(iOS 10, *)) {
-        return [self valueForKeyPath:@"_backgroundView._backgroundEffectView"];
-    }
-    return [self valueForKeyPath:@"_backgroundView"];
-}
-
 @end
 
 @implementation UIToolbar (JZExtension)
